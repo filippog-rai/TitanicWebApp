@@ -10,18 +10,6 @@ import kagglehub
 import base64
 
 from itertools import product
-
-# Stampa la directory corrente
-st.write(f"Directory Corrente: {os.getcwd()}")
-
-# Stampa i file presenti nella cartella radice (dovresti vedere 'app.py' e 'asset/')
-st.write("File nella root:", os.listdir()) 
-
-# Prova a listare i file nella cartella 'asset' (ATTENZIONE alla case-sensitivity)
-try:
-    st.write(f"File nella cartella asset: {os.listdir('asset')}")
-except FileNotFoundError:
-    st.write("Errore: la cartella 'asset' non è stata trovata o ha problemi di permessi.")
     
 def set_background(image_file):
     """
