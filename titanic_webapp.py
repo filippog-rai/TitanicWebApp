@@ -164,7 +164,7 @@ def reset_filters():
 st.button("Reset all filters", on_click=reset_filters)
 
 with st.form("filter_form"):
-    st.markdown("Select passenger profile to identify survival probability.")
+    st.markdown("Select passenger profile to evaluate survival probability")
 
     if 'selected_sex' not in st.session_state:
         st.session_state.selected_sex = DEFAULT_SEX
