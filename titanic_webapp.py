@@ -147,7 +147,7 @@ def get_filter_options(column):
 st.markdown("<p style='font-size: 18px; color: grey;'>RAI-7002 | Assessment 3 | Group 4</p>", unsafe_allow_html=True)
 
 # --- 2. STREAMLIT PAGE CONFIGURATION ---
-st.set_page_config(layout="wide", page_title="Titanic: Descriptive Analysis", page_icon="⚓")
+st.set_page_config(layout="wide", page_title="Titanic: Descriptive Analysis", page_icon="🚢")
 st.title("Survivor Analysis on the Titanic Dataset")
 
 # Definisci i valori iniziali (la prima opzione, che è 'Tutti')
@@ -201,7 +201,7 @@ df_filter_pivot['FilterValue'] = 1
 # --- 4. DATAFRAME FILTER ---
 if st.session_state.submitted:
 
-    st.success(f"{selected_sex} - {selected_age} - {selected_pclass} selected.")
+    st.success(f"Sex: {selected_sex} - Age Group: {selected_age} - Class: {selected_pclass}")
 
     # 4b. Final filter
     if selected_sex != ALL_OPTION and selected_pclass != ALL_OPTION and selected_age != ALL_OPTION:
@@ -289,9 +289,8 @@ else:
 
 # --- 6. STORYTELLING  (3D scatterplot) ---
 st.markdown("---")
-st.header("Focus on top 3 predictors")
-st.subheader("Sex / Pclass / Age Group")
-
+st.header("Sex / Pclass / Age Group")
+st.subheader("How they influence survival rate")
 
 df_agg_3d = df_for_3d.groupby(['Pclass', 'Sex', 'AgeGroup'], observed=True).agg(
 SurvivalRate_dec=('Survived', 'mean'),
